@@ -6,8 +6,8 @@ This problem provides practice at:
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Joseph Law.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 # Students:
@@ -40,7 +40,7 @@ def main():
     # UN-comment tests as you work the problems.
     ###########################################################################
 
-    # run_test_init()
+    #run_test_init()
     # run_test_append_string()
     # run_test_double()
     # run_test_shrink()
@@ -95,7 +95,7 @@ class Box(object):
           :type volume: int
         """
         # ---------------------------------------------------------------------
-        # TODO: 2. Implement and test this function.
+        # DONE: 2. Implement and test this function.
         #     See the testing code (below) for more examples.
         # ---------------------------------------------------------------------
         # ---------------------------------------------------------------------
@@ -103,7 +103,11 @@ class Box(object):
         #    DIFFICULTY:      3
         #    TIME ESTIMATE:   5 minutes.
         # ---------------------------------------------------------------------
-
+        if len(contents) > volume:
+            self.contents = ''
+        else:
+            self.contents = contents
+        self.volume = volume
     def append_string(self, additional_contents):
         """
         What comes in:
@@ -158,6 +162,11 @@ class Box(object):
         #       Read_this_ONLY_when_asked_Part_2.txt
         #    and complete your work on the problem.
         # ---------------------------------------------------------------------
+        for k in range(self.volume + 1):
+            if len(self.contents + additional_contents) <= self.volume - k:
+                self.contents = self.contents + additional_contents[k]
+                s = ''
+            else:
 
     def double(self):
         """
